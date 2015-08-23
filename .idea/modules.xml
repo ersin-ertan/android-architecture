@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/akatsuki/akatsuki.iml" filepath="$PROJECT_DIR$/akatsuki/akatsuki.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-architecture.iml" filepath="$PROJECT_DIR$/android-architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentargs/fragmentargs.iml" filepath="$PROJECT_DIR$/fragmentargs/fragmentargs.iml" />
     </modules>
   </component>
 </project>

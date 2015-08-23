@@ -9,4 +9,4 @@
  - [AndroidViewModel](https://github.com/inloop/AndroidViewModel) evaluating
 
 - [Tom91136](https://github.com/tom91136)
- - [Akatsuki](https://github.com/tom91136/Akatsuki) evaluating
+ - [Akatsuki](https://github.com/tom91136/Akatsuki) - [Example]()
