@@ -3,4 +3,10 @@ package com.nullcognition.dagger2.apis;
 
 
 public class MyClass03 extends MyClass00{
+
+	private static int count = 0;
+	private final  int id    = count++;
+	public String getId(){return this.getClass().getSimpleName() + ":" + id;}
+
+
 }
