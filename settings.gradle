@@ -1,1 +1,1 @@
-include ':app', ':fragmentargs'
+include ':app', ':fragmentargs', ':dagger2'
