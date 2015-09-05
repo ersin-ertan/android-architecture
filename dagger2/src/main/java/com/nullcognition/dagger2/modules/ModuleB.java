@@ -3,6 +3,7 @@ package com.nullcognition.dagger2.modules;
 
 import com.nullcognition.dagger2.apis.MyClass03;
 import com.nullcognition.dagger2.apis.InjectConstructor;
+import com.nullcognition.dagger2.sopes.ScopeCustom;
 
 import javax.inject.Singleton;
 
@@ -15,7 +16,7 @@ import dagger.Provides;
 @Module
 public class ModuleB{
 
-	@Provides @Singleton
+	@Provides @ScopeCustom
 	public MyClass03 provideMyClass03(){return new MyClass03();}
 
 //	@Provides InjectConstructor provideConstorInject(){return new InjectConstructor();}
