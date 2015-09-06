@@ -21,6 +21,8 @@ public class ModuleA{
 	@Provides @ScopeCustom @Named("another") // creates two different instances
 	public MyClass01 provideAnotherMyClass01(){return new MyClass01();}
 
+	@Provides @ScopeCustom @Named("lazy") // creates two different instances
+	public MyClass01 provideLazyMyClass01(){return new MyClass01();}
 
 
 	@Provides MyClass02 provideMyClass02(){return new MyClass02();}

@@ -24,6 +24,8 @@ import dagger.Component;
 
 public interface ComponentMedium{
 
+// because the type must be of MainActivity and parent/child do not work, your could implement an
+// abstract class,in a base class, perform the injection there and implement it in a sub class
 	void mediumsInject(MainActivity mainActivity);
 
 	//	MyClass03 myClass03(); // is this needed if doing method injection, no. It sets the fields and the

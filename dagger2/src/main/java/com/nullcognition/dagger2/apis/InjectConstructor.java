@@ -16,4 +16,6 @@ public class InjectConstructor extends MyClass00{
 	public String getId(){return this.getClass().getSimpleName() + " as non provided Singleton " + ":" + id;}
 	// non provided from module because it uses constructor injection in the class itself
 
+	public int i = 0;
+	public void setI(final int i){this.i = i;}
 }
