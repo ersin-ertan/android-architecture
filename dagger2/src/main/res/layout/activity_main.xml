@@ -13,7 +13,7 @@
 	<TextView
 		android:layout_height = "wrap_content"
 		android:layout_width = "wrap_content"
-		android:text = "injSingleton"
+		android:text = "injSingletonMyClass01"
 		android:id = "@+id/tv_injSingleton"
 		android:layout_below = "@+id/tv_injNon" android:layout_alignParentLeft = "true" android:layout_alignParentStart = "true"
 		/>
@@ -31,7 +31,7 @@
 		android:layout_height = "wrap_content"
 		android:text = "injConstructor not provided in module"
 		android:id = "@+id/tv_injConst"
-		android:layout_below = "@+id/tv_injSingleton" android:layout_alignParentLeft = "true" android:layout_alignParentStart = "true"
+		android:layout_below = "@+id/tv_injSingletonAnother" android:layout_alignParentLeft = "true" android:layout_alignParentStart = "true"
 		/>
 
 	<Button
@@ -40,6 +40,14 @@
 		android:text = "get from obj graph"
 		android:id = "@+id/btn_getObjG"
 		android:layout_below = "@+id/tv_injConst" android:layout_alignParentLeft = "true" android:layout_alignParentStart = "true"
+		/>
+
+	<TextView
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:text = "injSingletonAnotherMyClass01"
+		android:id = "@+id/tv_injSingletonAnother"
+		android:layout_below = "@+id/tv_injSingleton" android:layout_alignParentLeft = "true" android:layout_alignParentStart = "true"
 		/>
 
 </RelativeLayout>

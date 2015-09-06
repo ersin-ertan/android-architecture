@@ -10,6 +10,7 @@ import com.nullcognition.dagger2.apis.MyClass01;
 import com.nullcognition.dagger2.apis.MyClass02;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -18,7 +19,9 @@ public class MainActivity extends AppCompatActivity{
 
 //	@Inject MySingleton mySingleton;
 
-	@Inject MyClass01 myClass01; // singleton
+	@Inject @Named("default")       MyClass01 myClass01; // singleton
+	@Inject @Named("another") MyClass01 anothermyClass01; // singleton
+
 	@Inject MyClass02 myClass02; // !singleton
 	InjectConstructor injectConstructor;
 
@@ -35,7 +38,9 @@ public class MainActivity extends AppCompatActivity{
 
 	}
 	private void populateTextViews(){
-		((TextView) findViewById(R.id.tv_injSingleton)).setText(myClass01.getId());
+		((TextView) findViewById(R.id.tv_injSingleton)).setText("default " + myClass01.getId());
+		((TextView) findViewById(R.id.tv_injSingletonAnother)).setText("another " + anothermyClass01.getId());
+
 		((TextView) findViewById(R.id.tv_injNon)).setText(myClass02.getId());
 	}
 
