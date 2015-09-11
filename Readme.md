@@ -5,6 +5,4 @@
 - [Sockeqwe](https://github.com/sockeqwe)
     - [FragmentArgs](https://github.com/sockeqwe/fragmentArgs)
 
-- [Inloop](https://github.com/inloop)
-    - [AndroidViewModel](https://github.com/inloop/AndroidViewModel) evaluating
 

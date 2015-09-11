@@ -4,8 +4,7 @@ package com.nullcognition.dagger2.sopes;
 import javax.inject.Scope;
 
 @Scope
-public @interface ScopeCustom{
-}
+public @interface ScopeCustom{ }
 
 // custom scopes may only have one instance of dependency
 // add semantic clarity

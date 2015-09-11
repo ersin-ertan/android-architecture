@@ -42,11 +42,10 @@ public class App extends Application{
 // 	                                       .moduleB(new ModuleB())
 					.build();
 		}
+	}
+}
 
 //	if creating a component which has all modules implicitly create able, and you can use
 //		DaggerMyComponentWithModulesAllImpliciclyCreatable.create(); // no need or the builder
-
-	}
-}
 
 

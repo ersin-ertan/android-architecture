@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity{
 		((TextView) findViewById(R.id.tv_injSingleton)).setText("default " + myClass01.getId());
 		((TextView) findViewById(R.id.tv_injSingletonAnother)).setText("another " + anothermyClass01.getId());
 
-		// does not work because the call to get creates the instance, and myClass01Lazy as the wrapper
-		// is not null
 
 		if(injectConstructor != null){
 			((TextView) findViewById(R.id.tv_injConst)).setText(injectConstructor.getId() +
@@ -61,8 +59,10 @@ public class MainActivity extends AppCompatActivity{
 
 		}
 
+		// does not work because the call to get creates the instance, and myClass01Lazy as the wrapper
+		// is not null
 //		if(myClass01Lazy.get() != null){
-//// lazy injected, thus may be null until instantiated
+//      lazy injected, thus may be null until instantiated
 //			((TextView) findViewById(R.id.tv_lazy)).setText("lazy " + myClass01Lazy.get().getId());
 //		}
 
