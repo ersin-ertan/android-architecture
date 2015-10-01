@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity{
 
 				if(frag == null){
 					Log.e(TAG, "new Frag()");
-					frag = new Frag();
+					Retainable retainable = new Retainable();
+					retainable.state = 2;
+					frag = new FragBuilder(retainable, 2).build();
 					getSupportFragmentManager().beginTransaction().add(frag, Frag.TAG).commit();
 				}
 				else{

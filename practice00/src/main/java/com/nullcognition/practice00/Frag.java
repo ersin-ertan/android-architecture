@@ -11,13 +11,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hannesdorfmann.fragmentargs.FragmentArgs;
+import com.hannesdorfmann.fragmentargs.annotation.Arg;
+import com.sora.util.akatsuki.Akatsuki;
+import com.sora.util.akatsuki.Retained;
+
 public class Frag extends Fragment{
 
 	public static final String TAG = Frag.class.getSimpleName();
 
-	public int state = 0;
-	public Retainable retainable;
-	public Obj        obj;
+	@Retained @Arg public int state = 0;
+	@Retained @Arg public Retainable retainable;
+	public                Obj        obj;
 
 	public Frag(){}
 
@@ -29,20 +34,25 @@ public class Frag extends Fragment{
 
 	@Override public void onCreate(final Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
+		FragmentArgs.inject(this);
+		Akatsuki.restore(this, savedInstanceState); // because fragmentargs restores onCreate, the value
+		// of state will be what was first passed to it during FragBuilder construction, thus the akatsuki
+		// must overwrite that value with the retained value if it has changed since
 
 		Log.e(TAG, "onCreate() Frag reference:" + this.toString());
 		Log.e(TAG, "onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
 		Log.e(TAG, "onCreate() Frag State: " + String.valueOf(state));
-		retainable = new Retainable();
+		if(retainable == null){retainable = new Retainable();}
 		Log.e(TAG, "onCreate Retainable State: " + String.valueOf(retainable.state));
-		obj = new Obj();
+		if(obj == null){ obj = new Obj(); }
 		Log.e(TAG, "onCreate Obj State: " + String.valueOf(obj.state));
 
-		setRetainInstance(true);
+//		setRetainInstance(true);
 	}
 
 
 	@Nullable @Override public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState){
+		Akatsuki.restore(this, savedInstanceState);
 		Log.e(TAG, "onCreateView() called with: " + "inflater = [" + inflater + "], container = [" + container + "], savedInstanceState = [" + savedInstanceState + "]");
 		Log.e(TAG, "onCreateView() Frag State" + String.valueOf(state));
 		Log.e(TAG, "onCreateView() Retainable State: " + String.valueOf(retainable.state));
@@ -51,6 +61,10 @@ public class Frag extends Fragment{
 		return super.onCreateView(inflater, container, savedInstanceState);
 	}
 
+	@Override public void onSaveInstanceState(final Bundle outState){
+		super.onSaveInstanceState(outState);
+		Akatsuki.save(this, outState);
+	}
 	@Override public void onDestroyView(){
 		Log.e(TAG, "onDestroyView() called with: " + "");
 		super.onDestroyView();
