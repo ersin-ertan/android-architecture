@@ -29,16 +29,16 @@ public class MainActivity extends AppCompatActivity{
 				if(frag == null){
 					Log.e(TAG, "new Frag()");
 					Retainable retainable = new Retainable();
-					retainable.state = 2;
+					retainable.setState(2);
 					frag = new FragBuilder(retainable, 2).build();
-					getSupportFragmentManager().beginTransaction().add(frag, Frag.TAG).commit();
+					getSupportFragmentManager().beginTransaction().add(R.id.linearLayout, frag, Frag.TAG).commit();
 				}
 				else{
 					frag.state = 1;
 					Log.e(TAG, "Activity Frag State:" + String.valueOf(frag.state));
 
-					frag.retainable.state = 1;
-					Log.e(TAG, "Activity Retainable State:" + String.valueOf(frag.retainable.state));
+					frag.retainable.setState(1);
+					Log.e(TAG, "Activity Retainable State:" + String.valueOf(frag.retainable.getState()));
 
 					frag.obj.state = 1;
 					Log.e(TAG, "Activity Obj State: " + String.valueOf(frag.obj.state));

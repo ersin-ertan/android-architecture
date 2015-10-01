@@ -3,6 +3,7 @@ package com.nullcognition.practice00;
 
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.hannesdorfmann.fragmentargs.FragmentArgs;
 import com.hannesdorfmann.fragmentargs.annotation.Arg;
+import com.nullcognition.practice00.databinding.FragBinding;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Retained;
 
@@ -43,7 +45,7 @@ public class Frag extends Fragment{
 		Log.e(TAG, "onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
 		Log.e(TAG, "onCreate() Frag State: " + String.valueOf(state));
 		if(retainable == null){retainable = new Retainable();}
-		Log.e(TAG, "onCreate Retainable State: " + String.valueOf(retainable.state));
+		Log.e(TAG, "onCreate Retainable State: " + String.valueOf(retainable.getState()));
 		if(obj == null){ obj = new Obj(); }
 		Log.e(TAG, "onCreate Obj State: " + String.valueOf(obj.state));
 
@@ -55,10 +57,14 @@ public class Frag extends Fragment{
 		Akatsuki.restore(this, savedInstanceState);
 		Log.e(TAG, "onCreateView() called with: " + "inflater = [" + inflater + "], container = [" + container + "], savedInstanceState = [" + savedInstanceState + "]");
 		Log.e(TAG, "onCreateView() Frag State" + String.valueOf(state));
-		Log.e(TAG, "onCreateView() Retainable State: " + String.valueOf(retainable.state));
+		Log.e(TAG, "onCreateView() Retainable State: " + String.valueOf(retainable.getState()));
 		Log.e(TAG, "onCreateView() Obj State: " + String.valueOf(obj.state));
 
-		return super.onCreateView(inflater, container, savedInstanceState);
+
+//		View rootView = inflater.inflate(R.layout.frag, container, false);
+		FragBinding fragBinding = DataBindingUtil.inflate(inflater, R.layout.frag, container, false);
+		fragBinding.setRet(retainable);
+		return fragBinding.getRoot();
 	}
 
 	@Override public void onSaveInstanceState(final Bundle outState){
