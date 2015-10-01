@@ -23,8 +23,9 @@ public class Frag extends Fragment{
 	public static final String TAG = Frag.class.getSimpleName();
 
 	@Retained @Arg public int state = 0;
-	@Retained @Arg public Retainable retainable;
-	public                Obj        obj;
+	@Retained @Arg public Retainable    retainable;
+	public                Obj           obj;
+	public                FragViewModel fragViewModel;
 
 	public Frag(){}
 
@@ -40,6 +41,8 @@ public class Frag extends Fragment{
 		Akatsuki.restore(this, savedInstanceState); // because fragmentargs restores onCreate, the value
 		// of state will be what was first passed to it during FragBuilder construction, thus the akatsuki
 		// must overwrite that value with the retained value if it has changed since
+
+		fragViewModel = new FragViewModel(retainable);
 
 		Log.e(TAG, "onCreate() Frag reference:" + this.toString());
 		Log.e(TAG, "onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
@@ -64,8 +67,9 @@ public class Frag extends Fragment{
 //		View rootView = inflater.inflate(R.layout.frag, container, false);
 		FragBinding fragBinding = DataBindingUtil.inflate(inflater, R.layout.frag, container, false);
 		fragBinding.setRet(retainable);
-//		fragBinding.setVariable()inflate()bind()invalidateAll()hasPendingBindings()getRoot()getRet()setRet(); and more
+		fragBinding.setFragViewModel(fragViewModel);
 		return fragBinding.getRoot();
+//		fragBinding.setVariable()inflate()bind()invalidateAll()hasPendingBindings()getRoot()getRet()setRet(); and more
 	}
 
 	@Override public void onSaveInstanceState(final Bundle outState){
