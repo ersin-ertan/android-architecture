@@ -5,6 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.squareup.moshi.JsonAdapter;
+import com.squareup.moshi.Moshi;
+
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity{
 
 	public static final String TAG = MainActivity.class.getSimpleName();
@@ -24,12 +29,29 @@ public class MainActivity extends AppCompatActivity{
 
 		button = findViewById(R.id.button);
 		button.setOnClickListener(new View.OnClickListener(){
+
+			public Retainable getRetainable(){
+
+				String json =
+						"{\"state\": \"3\"}";
+
+				Moshi                   moshi       = new Moshi.Builder().build();
+				JsonAdapter<Retainable> jsonAdapter = moshi.adapter(Retainable.class);
+
+				Retainable retainable = null;
+				try{ retainable = jsonAdapter.fromJson(json);}
+				catch(IOException e){ e.printStackTrace();}
+				return retainable;
+			}
+
 			@Override public void onClick(final View v){
 
 				if(frag == null){
 					Log.e(TAG, "new Frag()");
-					Retainable retainable = new Retainable();
-					retainable.setState(2);
+
+
+					Retainable retainable = getRetainable();
+//					retainable.setState(2); // state set from json object
 					frag = new FragBuilder(retainable, 2).build();
 					getSupportFragmentManager().beginTransaction().add(R.id.linearLayout, frag, Frag.TAG).commit();
 				}

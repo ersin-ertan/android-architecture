@@ -64,6 +64,7 @@ public class Frag extends Fragment{
 //		View rootView = inflater.inflate(R.layout.frag, container, false);
 		FragBinding fragBinding = DataBindingUtil.inflate(inflater, R.layout.frag, container, false);
 		fragBinding.setRet(retainable);
+//		fragBinding.setVariable()inflate()bind()invalidateAll()hasPendingBindings()getRoot()getRet()setRet(); and more
 		return fragBinding.getRoot();
 	}
 
