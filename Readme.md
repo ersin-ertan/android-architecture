@@ -7,3 +7,5 @@
     - [Mosby](https://github.com/sockeqwe/mosby)
 
 
+- [Hitherejoe](https://github.com/hitherejoe)
+    -[MVVM_Hacker_News](https://github.com/hitherejoe/MVVM_Hacker_News)
