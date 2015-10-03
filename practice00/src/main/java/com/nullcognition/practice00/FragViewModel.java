@@ -6,6 +6,8 @@ import android.view.View;
 
 public class FragViewModel{
 
+	// the view model should have/or be the base observable
+
 	private Retainable retainable;
 
 	public FragViewModel(final Retainable retainable){

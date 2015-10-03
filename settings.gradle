@@ -1,1 +1,1 @@
-include ':app', ':fragmentargs', ':dagger2', ':androidviewmodel', ':mosby', ':practice00'
+include ':app', ':fragmentargs', ':dagger2', ':androidviewmodel', ':mosby', ':practice00', ':joebirchmvvm'

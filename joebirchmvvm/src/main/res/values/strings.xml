@@ -1,0 +1,13 @@
+<resources>
+	<string name = "app_name">JoeBirchMVVM</string>
+	<string name = "dialog_error_title">dialog error title</string>
+	<string name = "dialog_action_ok">dialog action ok</string>
+	<string name = "dialog_rate_app_title">dialog rate app title</string>
+	<string name = "dialog_rate_app_text">dialog rate app text</string>
+	<string name = "dialog_positive_button_text">dialog positive</string>
+	<string name = "dialog_negative_button_text">dialog negative</string>
+	<string name = "dialog_neutral_button_text">dialog neutral</string>
+	<string name = "text_comment_author">text comment author</string>
+	<string name = "story_points">story points</string>
+	<string name = "text_post_author">text post author</string>
+</resources>
