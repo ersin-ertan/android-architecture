@@ -9,3 +9,6 @@
 
 - [Hitherejoe](https://github.com/hitherejoe)
     -[MVVM_Hacker_News](https://github.com/hitherejoe/MVVM_Hacker_News)
+
+- [android10](https://github.com/android10)
+    -[Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
