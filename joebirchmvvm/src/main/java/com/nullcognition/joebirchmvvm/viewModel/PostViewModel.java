@@ -9,6 +9,9 @@ import android.view.View;
 
 import com.nullcognition.joebirchmvvm.R;
 import com.nullcognition.joebirchmvvm.model.Post;
+import com.nullcognition.joebirchmvvm.view.activity.CommentsActivity;
+import com.nullcognition.joebirchmvvm.view.activity.UserActivity;
+import com.nullcognition.joebirchmvvm.view.activity.ViewStoryActivity;
 
 
 public class PostViewModel extends BaseObservable {
