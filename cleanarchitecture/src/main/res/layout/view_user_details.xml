@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height = "match_parent"
+              android:layout_width = "match_parent"
+              android:orientation = "vertical"
+              xmlns:android = "http://schemas.android.com/apk/res/android"
+	>
+
+	<com.nullcognition.cleanarchitecture.presentation.view.component.AutoLoadImageView
+		android:background = "@android:color/darker_gray"
+		android:id = "@+id/iv_cover"
+		android:layout_height = "@dimen/iv_cover_height"
+		android:layout_width = "match_parent"
+		/>
+
+	<TextView
+		android:id = "@+id/tv_fullname"
+		style = "@style/AppTheme.TextViewHeader"
+		/>
+
+	<LinearLayout
+		android:layout_height = "match_parent"
+		android:layout_marginLeft = "@dimen/activity_horizontal_margin"
+		android:layout_marginRight = "@dimen/activity_horizontal_margin"
+		android:layout_width = "match_parent"
+		android:orientation = "vertical"
+		>
+
+		<TextView
+			android:text = "@string/view_text_email"
+			style = "@style/AppTheme.TextViewTitle"
+			/>
+
+		<TextView
+			android:id = "@+id/tv_email"
+			android:layout_height = "wrap_content"
+			android:layout_width = "match_parent"
+			/>
+
+		<TextView
+			android:text = "@string/view_text_followers"
+			style = "@style/AppTheme.TextViewTitle"
+			/>
+
+		<TextView
+			android:id = "@+id/tv_followers"
+			android:layout_height = "wrap_content"
+			android:layout_width = "match_parent"
+			/>
+
+		<TextView
+			android:text = "@string/view_text_description"
+			style = "@style/AppTheme.TextViewTitle"
+			/>
+
+		<TextView
+			android:id = "@+id/tv_description"
+			android:layout_height = "wrap_content"
+			android:layout_width = "match_parent"
+			/>
+	</LinearLayout>
+
+</LinearLayout>

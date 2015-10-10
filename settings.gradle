@@ -1,1 +1,1 @@
-include ':fragmentargs', ':dagger2',  ':cleanarchitecture'
+include ':fragmentargs', ':dagger2',  ':cleanarchitecture', ':rx-android-architecture'

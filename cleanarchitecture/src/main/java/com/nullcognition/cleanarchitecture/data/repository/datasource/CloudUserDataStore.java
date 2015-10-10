@@ -28,11 +28,11 @@ public class CloudUserDataStore implements UserDataStore{
 	}
 
 	@Override public Observable<List<UserEntity>> userEntityList(){
-		return restApi.userEntityList();
+		return restApi.getUserEntityList();
 	}
 
 	@Override public Observable<UserEntity> userEntityDetails(final int userid){
-		return restApi.userEntityById(userid)
+		return restApi.getUserEntityById(userid)
 		              .doOnNext(saveToCacheAction);
 	}
 

@@ -8,6 +8,7 @@ import com.nullcognition.cleanarchitecture.data.entity.mapper.UserEntityJsonMapp
 import com.nullcognition.cleanarchitecture.data.net.RestApi;
 import com.nullcognition.cleanarchitecture.data.net.RestApiImpl;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 @Singleton
@@ -16,6 +17,7 @@ public class UserDataStoreFactory{
 	private final Context   context;
 	private final UserCache userCache;
 
+	@Inject
 	public UserDataStoreFactory(final Context context, final UserCache userCache){
 		if(context == null || userCache == null){
 			throw new IllegalArgumentException("consturtor parms cant be null");

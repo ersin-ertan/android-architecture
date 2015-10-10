@@ -9,6 +9,7 @@ import com.nullcognition.cleanarchitecture.domain.repository.UserRepository;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import rx.Observable;
@@ -19,20 +20,21 @@ public class UserDataRepository implements UserRepository{
 	private final UserDataStoreFactory userDataStoreFactory;
 	private final UserEntityDataMapper userEntityDataMapper;
 
+	@Inject
 	public UserDataRepository(final UserDataStoreFactory userDataStoreFactory, final UserEntityDataMapper userEntityDataMapper){
 		this.userDataStoreFactory = userDataStoreFactory;
 		this.userEntityDataMapper = userEntityDataMapper;
 	}
 
 	@SuppressWarnings("Convert2MethodRef")
-	@Override public Observable<List<User>> users(){
+	@Override public Observable<List<User>> getUsers(){
 		final UserDataStore userDataStore = this.userDataStoreFactory.createCloudDataStore();
 		return userDataStore.userEntityList()
 		                    .map(userEntities -> this.userEntityDataMapper.transform(userEntities));
 	}
 
 	@SuppressWarnings("Convert2MethodRef")
-	@Override public Observable<User> user(int userId){
+	@Override public Observable<User> getUser(int userId){
 		final UserDataStore userDataStore = this.userDataStoreFactory.create(userId);
 		return userDataStore.userEntityDetails(userId)
 		                    .map(userEntity -> this.userEntityDataMapper.transform(userEntity));

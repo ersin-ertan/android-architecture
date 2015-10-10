@@ -7,3 +7,6 @@
 
 - [android10](https://github.com/android10)
     - [Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
+
+- [Tehmou](https://github.com/tehmou)
+    - [rx-android-architecture](https://github.com/tehmou/rx-android-architecture)
