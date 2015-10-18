@@ -1,11 +1,12 @@
-package com.nullcognition.template00.di.application;
+package com.nullcognition.template00.di.di.application;
 // ersin 17/10/15 Copyright (c) 2015+ All rights reserved.
 
 
 import android.app.Application;
 import android.content.Context;
 
-import com.nullcognition.template00.di.activity.DaggeredActivity;
+import com.nullcognition.template00.di.di.activity.DaggeredActivity;
+import com.nullcognition.template00.di.di.navigator.Navigator;
 
 import javax.inject.Singleton;
 

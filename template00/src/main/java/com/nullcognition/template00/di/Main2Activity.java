@@ -1,14 +1,10 @@
 package com.nullcognition.template00.di;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import com.nullcognition.template00.R;
-import com.nullcognition.template00.di.activity.BaseActivity;
-import com.nullcognition.template00.di.activity.DaggeredActivity;
-import com.sora.util.akatsuki.Akatsuki;
-import com.sora.util.akatsuki.Arg;
+import com.nullcognition.template00.di.di.activity.BaseActivity;
+import com.nullcognition.template00.di.di.activity.DaggeredActivity;
 
 public class Main2Activity extends BaseActivity{
 

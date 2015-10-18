@@ -1,11 +1,11 @@
-package com.nullcognition.template00.di.activity;
+package com.nullcognition.template00.di.di.activity;
 // ersin 17/10/15 Copyright (c) 2015+ All rights reserved.
 
 
 import com.nullcognition.template00.di.Main2Activity;
 import com.nullcognition.template00.di.MainActivity;
-import com.nullcognition.template00.di.application.App;
-import com.nullcognition.template00.di.fragment.DaggeredFragment;
+import com.nullcognition.template00.di.di.application.App;
+import com.nullcognition.template00.di.di.fragment.DaggeredFragment;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

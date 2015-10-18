@@ -1,4 +1,4 @@
-package com.nullcognition.template00.di.fragment;
+package com.nullcognition.template00.di.di.fragment;
 // ersin 17/10/15 Copyright (c) 2015+ All rights reserved.
 
 
@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nullcognition.template00.di.activity.BaseActivity;
+import com.nullcognition.template00.di.di.activity.BaseActivity;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Retained;
 

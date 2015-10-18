@@ -1,8 +1,8 @@
-package com.nullcognition.template00.di.fragment;
+package com.nullcognition.template00.di.di.fragment;
 // ersin 17/10/15 Copyright (c) 2015+ All rights reserved.
 
 
-import com.nullcognition.template00.di.application.App;
+import com.nullcognition.template00.di.di.application.App;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

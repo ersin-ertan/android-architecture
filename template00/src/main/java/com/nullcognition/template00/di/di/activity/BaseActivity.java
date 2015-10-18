@@ -1,19 +1,23 @@
-package com.nullcognition.template00.di.activity;
+package com.nullcognition.template00.di.di.activity;
 // ersin 17/10/15 Copyright (c) 2015+ All rights reserved.
 
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.nullcognition.template00.di.application.App;
-import com.nullcognition.template00.di.fragment.DaggeredFragment;
+import com.nullcognition.template00.di.di.application.App;
+import com.nullcognition.template00.di.di.fragment.DaggeredFragment;
+import com.nullcognition.template00.di.di.navigator.Navigator;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Retained;
+
+import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity{
 
+	@Inject protected Navigator navigator;
 	@Retained String s = ""; // still need in the base class else crash
 
 	public final DaggeredFragment.ComponentHolder fragmentComponentHolder =

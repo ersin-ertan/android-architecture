@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nullcognition.template00.R;
-import com.nullcognition.template00.di.fragment.BaseViewFragment;
-import com.nullcognition.template00.di.fragment.DaggeredFragment;
+import com.nullcognition.template00.di.di.fragment.BaseViewFragment;
+import com.nullcognition.template00.di.di.fragment.DaggeredFragment;
 
 import butterknife.Bind;
 import butterknife.BindString;
