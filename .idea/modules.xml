@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/dagger2/dagger2.iml" filepath="$PROJECT_DIR$/dagger2/dagger2.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentargs/fragmentargs.iml" filepath="$PROJECT_DIR$/fragmentargs/fragmentargs.iml" />
       <module fileurl="file://$PROJECT_DIR$/rx-android-architecture/rx-android-architecture.iml" filepath="$PROJECT_DIR$/rx-android-architecture/rx-android-architecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/template00/template00.iml" filepath="$PROJECT_DIR$/template00/template00.iml" />
     </modules>
   </component>
 </project>

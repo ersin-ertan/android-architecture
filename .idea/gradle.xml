@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/dagger2" />
             <option value="$PROJECT_DIR$/fragmentargs" />
             <option value="$PROJECT_DIR$/rx-android-architecture" />
+            <option value="$PROJECT_DIR$/template00" />
           </set>
         </option>
       </GradleProjectSettings>
