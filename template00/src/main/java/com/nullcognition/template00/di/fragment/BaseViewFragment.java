@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.nullcognition.template00.di.activity.BaseActivity;
 import com.nullcognition.template00.di.presenter.BasePresenter;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Retained;
@@ -17,25 +18,26 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseViewFragment extends android.support.v4.app.Fragment{
+public abstract class BaseViewFragment<P extends BasePresenter> extends android.support.v4.app.Fragment{
 
 	@Retained public String s = "";
-	//	public           DaggeredPresenter.ComponentHolder presenterComponentHolder =
-//			new DaggeredPresenter.ComponentHolder();
-	private BasePresenter basePresenter;
-
-		@Inject abstract void injectPresenter(BasePresenter bp);
+	protected P basePresenter;
 
 	@Override public void onAttach(final Context context){
 		super.onAttach(context);
 
-		com.nullcognition.template00.di.fragment.DaggeredFragment.ComponentHolder fch = ((com.nullcognition.template00.di.activity.BaseActivity) context).fragmentComponentHolder;
+		DaggeredFragment.ComponentHolder fch = ((BaseActivity) context).fragmentComponentHolder;
 		if(fch.getFragmentComponent() == null){ fch.createFragmentComponent(this); }
 
 		injectSelf(fch.getFragmentComponent());
+		basePresenter.setBaseFragment(this);
 	}
 
-	protected abstract void injectSelf(final com.nullcognition.template00.di.fragment.DaggeredFragment.FragmentComponent fragmentComponent);
+	protected abstract void injectSelf(final DaggeredFragment.FragmentComponent fragmentComponent);
+
+	@Inject protected void injectPresenter(P typedPresenter){
+		basePresenter = typedPresenter;
+	}
 
 	@Nullable @Override public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState){
 		View rootView = inflater.inflate(getLayout(), container, false);
@@ -57,7 +59,7 @@ public abstract class BaseViewFragment extends android.support.v4.app.Fragment{
 
 	@Override public void onDestroy(){
 		ButterKnife.unbind(this);
-		((com.nullcognition.template00.di.activity.BaseActivity) getActivity()).fragmentComponentHolder.releaseFragmentComponent();
+		((BaseActivity) getActivity()).fragmentComponentHolder.releaseFragmentComponent();
 		super.onDestroy();
 	}
 

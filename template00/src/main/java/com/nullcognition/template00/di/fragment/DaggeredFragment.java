@@ -3,6 +3,8 @@ package com.nullcognition.template00.di.fragment;
 
 
 import com.nullcognition.template00.di.application.App;
+import com.nullcognition.template00.di.presenter.BasePresenter;
+import com.nullcognition.template00.view.presenter.MainFragmentPresenter;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -18,10 +20,12 @@ public class DaggeredFragment{
 
 
 	@FragmentScope
-	@Subcomponent(modules = { DaggeredFragment.Module.class/*, DaggeredPresenter.Module.class*/ }) public interface FragmentComponent{
+	@Subcomponent(modules = { DaggeredFragment.Module.class/*, DaggeredPresenter.Module.class */ }) public interface FragmentComponent{
 
-		void inject(BaseViewFragment baseViewFragment);
-//		DaggeredPresenter.PresenterComponent plus(DaggeredPresenter.Module module);
+		void inject(BaseViewFragment<MainFragmentPresenter> baseViewFragment);
+
+//				void inject(BaseViewFragment<BasePresenter> baseViewFragment);
+		// will now have to create an injection for each type and have a cast in the fragment's inject() method
 	}
 
 

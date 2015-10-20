@@ -12,11 +12,13 @@ import android.widget.TextView;
 import com.nullcognition.template00.R;
 import com.nullcognition.template00.di.fragment.BaseViewFragment;
 import com.nullcognition.template00.di.fragment.DaggeredFragment;
+import com.nullcognition.template00.di.presenter.BasePresenter;
+import com.nullcognition.template00.view.presenter.MainFragmentPresenter;
 
 import butterknife.Bind;
 import butterknife.BindString;
 
-public class MainFragment extends BaseViewFragment{
+public class MainFragment<P extends BasePresenter> extends BaseViewFragment<P>{
 
 	public static final String TAG = "MainFragment";
 
@@ -25,14 +27,15 @@ public class MainFragment extends BaseViewFragment{
 	@BindString(R.string.app_name) String   appName;
 	@Bind(R.id.tv_fragment)        TextView textView;
 
+	// should inject type M extends BasePresenter, granted M has @Inject const. or @Provides module
 	@Override protected void injectSelf(final DaggeredFragment.FragmentComponent fragmentComponent){
-		fragmentComponent.inject(this);
+		fragmentComponent.inject((BaseViewFragment<MainFragmentPresenter>) this);
 	}
 
 	@Nullable @Override public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState){
 		View v = super.onCreateView(inflater, container, savedInstanceState);
 		textView.setText(appName);
-//		basePresenter.toast();
+		basePresenter.toast();
 		return v;
 	}
 

@@ -11,13 +11,11 @@ import javax.inject.Inject;
 
 public class MainFragmentPresenter extends BasePresenter{
 
-	@Inject public MainFragmentPresenter(final BaseViewFragment bvf){ super(bvf); }
-//	@Override protected void injectSelf(final DaggeredPresenter.PresenterComponent presenterComponent){
-//
-//	}
+	@Inject public MainFragmentPresenter(){ }
 
 	@Override public void toast(){
-		super.toast();
 		Toast.makeText(baseViewFragment.getContext(), "MainFragmentPresenter", Toast.LENGTH_SHORT).show();
 	}
+
+	@Override public void setBaseFragment(final BaseViewFragment bvf){ baseViewFragment = bvf; }
 }

@@ -6,6 +6,7 @@ import com.nullcognition.template00.R;
 import com.nullcognition.template00.di.activity.BaseActivity;
 import com.nullcognition.template00.di.activity.DaggeredActivity;
 import com.nullcognition.template00.view.fragment.MainFragment;
+import com.nullcognition.template00.view.presenter.MainFragmentPresenter;
 
 
 public class MainActivity extends BaseActivity{
@@ -36,7 +37,7 @@ public class MainActivity extends BaseActivity{
 	}
 
 	private void createFragment(){
-		getSupportFragmentManager().beginTransaction().add(R.id.linearLayout, new MainFragment(), MainFragment.TAG).commit();
+		getSupportFragmentManager().beginTransaction().add(R.id.linearLayout, new MainFragment<MainFragmentPresenter>(), MainFragment.TAG).commit();
 	}
 
 	@Override protected void injectSelf(final DaggeredActivity.ActivityComponent activityComponent){

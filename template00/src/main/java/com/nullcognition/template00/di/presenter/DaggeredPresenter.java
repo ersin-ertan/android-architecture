@@ -2,6 +2,11 @@ package com.nullcognition.template00.di.presenter;
 // ersin 19/10/15 Copyright (c) 2015+ All rights reserved.
 
 
+import com.nullcognition.template00.di.fragment.BaseViewFragment;
+import com.nullcognition.template00.di.fragment.DaggeredFragment;
+
+import dagger.Provides;
+
 public class DaggeredPresenter{
 
 //	@Scope @Retention(RetentionPolicy.RUNTIME) public @interface PresenterScope{ }
@@ -15,13 +20,16 @@ public class DaggeredPresenter{
 //
 
 
-//	@dagger.Module public static class Module{
-//
+	@dagger.Module public static class Module{
+
+		// should create a new instance, no scoping on each creation
 //		@DaggeredFragment.FragmentScope
-//		@Provides public BasePresenter provideBasePresenter(BaseViewFragment baseViewFragment){
-//			return new BasePresenter(baseViewFragment);
+//		@Provides public BasePresenter provideBasePresenter(){
+//			return new BasePresenter();
 //		}
-//	}
+
+
+	}
 
 
 //	public static class ComponentHolder{

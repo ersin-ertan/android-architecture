@@ -5,6 +5,7 @@ package com.nullcognition.template00.di.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.nullcognition.template00.di.application.App;
 import com.nullcognition.template00.di.fragment.DaggeredFragment;
 import com.nullcognition.template00.di.navigator.Navigator;
 import com.sora.util.akatsuki.Akatsuki;
@@ -26,7 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(getLayout());
 
-		com.nullcognition.template00.di.activity.DaggeredActivity.ComponentHolder ach = com.nullcognition.template00.di.application.App.get(this).activityComponentHolder;
+		DaggeredActivity.ComponentHolder ach = App.get(this).activityComponentHolder;
 		if(ach.getActivityComponent() == null){ ach.createActivityComponent(this); }
 
 		injectSelf(ach.getActivityComponent());
@@ -34,7 +35,7 @@ public abstract class BaseActivity extends AppCompatActivity{
 		Akatsuki.restore(this, savedInstanceState);
 	}
 
-	protected abstract void injectSelf(final com.nullcognition.template00.di.activity.DaggeredActivity.ActivityComponent activityComponent);
+	protected abstract void injectSelf(final DaggeredActivity.ActivityComponent activityComponent);
 	protected abstract int getLayout();
 
 	@Override protected void onSaveInstanceState(final Bundle outState){
@@ -44,7 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity{
 	}
 
 	@Override public void finish(){
-		com.nullcognition.template00.di.application.App.get(this).activityComponentHolder.releaseActivityComponent(); // learn as to when this is and is not needed
+		App.get(this).activityComponentHolder.releaseActivityComponent(); // learn as to when this is and is not needed
 		super.finish();
 	}
 }
