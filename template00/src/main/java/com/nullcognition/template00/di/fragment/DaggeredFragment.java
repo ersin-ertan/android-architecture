@@ -1,8 +1,8 @@
-package com.nullcognition.template00.di.di.fragment;
+package com.nullcognition.template00.di.fragment;
 // ersin 17/10/15 Copyright (c) 2015+ All rights reserved.
 
 
-import com.nullcognition.template00.di.di.application.App;
+import com.nullcognition.template00.di.application.App;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -16,19 +16,22 @@ public class DaggeredFragment{
 
 	@Scope @Retention(RetentionPolicy.RUNTIME) public @interface FragmentScope{ }
 
+
 	@FragmentScope
-	@Subcomponent(modules = { DaggeredFragment.Module.class }) public interface FragmentComponent{
+	@Subcomponent(modules = { DaggeredFragment.Module.class/*, DaggeredPresenter.Module.class*/ }) public interface FragmentComponent{
 
 		void inject(BaseViewFragment baseViewFragment);
-
+//		DaggeredPresenter.PresenterComponent plus(DaggeredPresenter.Module module);
 	}
 
 
 	@dagger.Module public static class Module{
 
 		final private BaseViewFragment baseViewFragment;
+
 		public Module(final BaseViewFragment baseViewFragment){this.baseViewFragment = baseViewFragment;}
 
+		@FragmentScope
 		@Provides public BaseViewFragment provideBaseFragment(){return baseViewFragment;}
 	}
 
@@ -36,9 +39,8 @@ public class DaggeredFragment{
 	public static class ComponentHolder{
 
 		private FragmentComponent fragmentComponent;
-		public FragmentComponent getFragmentComponent(){return fragmentComponent;}
 
-		public void releaseFragmentComponent(){fragmentComponent = null;}
+		public FragmentComponent getFragmentComponent(){return fragmentComponent;}
 
 		public FragmentComponent createFragmentComponent(BaseViewFragment baseViewFragment){
 			releaseFragmentComponent();
@@ -48,6 +50,8 @@ public class DaggeredFragment{
 							                        .plus(new Module(baseViewFragment));
 			return fragmentComponent;
 		}
+
+		public void releaseFragmentComponent(){fragmentComponent = null;}
 	}
 }
 

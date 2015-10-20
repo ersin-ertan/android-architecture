@@ -1,12 +1,9 @@
-package com.nullcognition.template00.di.di.application;
+package com.nullcognition.template00.di.application;
 // ersin 17/10/15 Copyright (c) 2015+ All rights reserved.
 
 
 import android.app.Application;
 import android.content.Context;
-
-import com.nullcognition.template00.di.di.activity.DaggeredActivity;
-import com.nullcognition.template00.di.di.navigator.Navigator;
 
 import javax.inject.Singleton;
 
@@ -14,13 +11,13 @@ import dagger.Provides;
 
 public class App extends Application{
 
+	public final com.nullcognition.template00.di.activity.DaggeredActivity.ComponentHolder activityComponentHolder =
+			new com.nullcognition.template00.di.activity.DaggeredActivity.ComponentHolder();
 	private Component app;
-	public Component getAppComponent(){return app;}
-
-	public final DaggeredActivity.ComponentHolder activityComponentHolder =
-			new DaggeredActivity.ComponentHolder();
 
 	public static App get(Context context){return (App) context.getApplicationContext();}
+
+	public Component getAppComponent(){return app;}
 
 	@Override public void onCreate(){
 		super.onCreate();
@@ -30,20 +27,22 @@ public class App extends Application{
 		app.inject(this);
 	}
 
-
-	@Singleton @dagger.Component(modules = { App.Module.class }) public interface Component{
+	@Singleton
+	@dagger.Component(modules = { App.Module.class }) public interface Component{
 
 		void inject(App app);
 
-		DaggeredActivity.ActivityComponent plus(DaggeredActivity.Module activityModule);
+		com.nullcognition.template00.di.activity.DaggeredActivity.ActivityComponent plus(com.nullcognition.template00.di.activity.DaggeredActivity.Module activityModule);
 	}
 
 
 	@dagger.Module public static class Module{
 
 		final private Application app;
+
 		public Module(App a){app = a;}
 
+		@Singleton
 		@Provides public Application provideApplication(){return app;}
 	}
 }

@@ -1,4 +1,4 @@
-package com.nullcognition.template00.di.di.fragment;
+package com.nullcognition.template00.di.fragment;
 // ersin 17/10/15 Copyright (c) 2015+ All rights reserved.
 
 
@@ -9,34 +9,45 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nullcognition.template00.di.di.activity.BaseActivity;
+import com.nullcognition.template00.di.presenter.BasePresenter;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Retained;
+
+import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 
 public abstract class BaseViewFragment extends android.support.v4.app.Fragment{
 
 	@Retained public String s = "";
+	//	public           DaggeredPresenter.ComponentHolder presenterComponentHolder =
+//			new DaggeredPresenter.ComponentHolder();
+	private BasePresenter basePresenter;
+
+		@Inject abstract void injectPresenter(BasePresenter bp);
 
 	@Override public void onAttach(final Context context){
 		super.onAttach(context);
 
-		DaggeredFragment.ComponentHolder fch = ((BaseActivity) context).fragmentComponentHolder;
+		com.nullcognition.template00.di.fragment.DaggeredFragment.ComponentHolder fch = ((com.nullcognition.template00.di.activity.BaseActivity) context).fragmentComponentHolder;
 		if(fch.getFragmentComponent() == null){ fch.createFragmentComponent(this); }
 
 		injectSelf(fch.getFragmentComponent());
 	}
 
-	@Override public void onViewStateRestored(@Nullable final Bundle savedInstanceState){
-		super.onViewStateRestored(savedInstanceState);
-		Akatsuki.restore(this, savedInstanceState);
-	}
+	protected abstract void injectSelf(final com.nullcognition.template00.di.fragment.DaggeredFragment.FragmentComponent fragmentComponent);
 
 	@Nullable @Override public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState){
 		View rootView = inflater.inflate(getLayout(), container, false);
 		ButterKnife.bind(this, rootView);
 		return rootView;
+	}
+
+	protected abstract int getLayout();
+
+	@Override public void onViewStateRestored(@Nullable final Bundle savedInstanceState){
+		super.onViewStateRestored(savedInstanceState);
+		Akatsuki.restore(this, savedInstanceState);
 	}
 
 	@Override public void onSaveInstanceState(final Bundle outState){
@@ -46,7 +57,7 @@ public abstract class BaseViewFragment extends android.support.v4.app.Fragment{
 
 	@Override public void onDestroy(){
 		ButterKnife.unbind(this);
-		((BaseActivity) getActivity()).fragmentComponentHolder.releaseFragmentComponent();
+		((com.nullcognition.template00.di.activity.BaseActivity) getActivity()).fragmentComponentHolder.releaseFragmentComponent();
 		super.onDestroy();
 	}
 
@@ -56,8 +67,4 @@ public abstract class BaseViewFragment extends android.support.v4.app.Fragment{
 		}
 		return null;
 	}
-
-	protected abstract void injectSelf(final DaggeredFragment.FragmentComponent fragmentComponent);
-
-	protected abstract int getLayout();
 }
