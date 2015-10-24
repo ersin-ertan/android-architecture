@@ -1,0 +1,6 @@
+# Dagger 2 and MVP
+Showcases the use of dagger 2 and the mvp, structuring the fragment as the passive view and using method injections to create new instances of the presenter assigned to the fragment. The presenters can also have dependencies fulfilled within their constructors thus any application scoped object/service can handle background processing and deliver the result to the presenter via the dependency component. Interfaces would have to be created to handle different retrieval, or with a common subscription/subscriber flow.
+
+Be careful of inheritance and injection, as each fragment class(view) takes a presenter type argument, which then excludes the ability to inject generic <? extends BaseViewFragment), and requires exact references to the sepecific type of fragment is using(hard coupling) (BaseViewFragment<TypeSpecificPresenter.>)
+
+Fragment is called BaseViewFragment to ensure that only fragment which have layout inflated will be used as an injectable component. Headless fragments need not apply to the specific component and should be explored in another module as they would have the ability to setRetainInstance(true) allowing them to persist across activity creation and destruction, to house observables, or observers pending on the implementation.

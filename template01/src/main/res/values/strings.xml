@@ -1,0 +1,4 @@
+<resources>
+	<string name = "app_name">Template01</string>
+	<string name = "default_nameFirstLast">NameFirstLastDefault</string>
+</resources>

@@ -1,9 +1,11 @@
-package com.nullcognition.template00.di.application;
-// ersin 17/10/15 Copyright (c) 2015+ All rights reserved.
+package com.nullcognition.template01.di.application;
+// ersin 21/10/15 Copyright (c) 2015+ All rights reserved.
 
 
 import android.app.Application;
 import android.content.Context;
+
+import com.nullcognition.template01.di.activity.DaggeredActivity;
 
 import javax.inject.Singleton;
 
@@ -11,8 +13,8 @@ import dagger.Provides;
 
 public class App extends Application{
 
-	public final com.nullcognition.template00.di.activity.DaggeredActivity.ComponentHolder activityComponentHolder =
-			new com.nullcognition.template00.di.activity.DaggeredActivity.ComponentHolder();
+	public final DaggeredActivity.ComponentHolder activityComponentHolder =
+			new DaggeredActivity.ComponentHolder();
 	private Component app;
 
 	public static App get(Context context){return (App) context.getApplicationContext();}
@@ -37,7 +39,7 @@ public class App extends Application{
 
 		void inject(App app);
 
-		com.nullcognition.template00.di.activity.DaggeredActivity.ActivityComponent plus(com.nullcognition.template00.di.activity.DaggeredActivity.Module activityModule);
+		DaggeredActivity.ActivityComponent plus(DaggeredActivity.Module activityModule);
 	}
 
 
@@ -51,4 +53,3 @@ public class App extends Application{
 		@Provides public Application provideApplication(){return app;}
 	}
 }
-
