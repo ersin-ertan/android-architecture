@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/cleanarchitecture/cleanarchitecture.iml" filepath="$PROJECT_DIR$/cleanarchitecture/cleanarchitecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/dagger2/dagger2.iml" filepath="$PROJECT_DIR$/dagger2/dagger2.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentargs/fragmentargs.iml" filepath="$PROJECT_DIR$/fragmentargs/fragmentargs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragnums/fragnums.iml" filepath="$PROJECT_DIR$/fragnums/fragnums.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navi/navi.iml" filepath="$PROJECT_DIR$/navi/navi.iml" />
       <module fileurl="file://$PROJECT_DIR$/rx-android-architecture/rx-android-architecture.iml" filepath="$PROJECT_DIR$/rx-android-architecture/rx-android-architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/template00/template00.iml" filepath="$PROJECT_DIR$/template00/template00.iml" />
       <module fileurl="file://$PROJECT_DIR$/template01/template01.iml" filepath="$PROJECT_DIR$/template01/template01.iml" />
