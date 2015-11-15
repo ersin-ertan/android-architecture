@@ -22,6 +22,8 @@ public class F0 extends F{
 
 	F0Binding binding;
 	@Retained ViewModel vm;
+	Controller controller;
+	Presenter  presenter;
 
 	@Override public void onCreate(@Nullable final Bundle savedInstanceState){
 		if(vm == null){
@@ -29,16 +31,20 @@ public class F0 extends F{
 			vm.os.set("onCreate f0");
 		}
 		super.onCreate(savedInstanceState);
+		controller = new Controller(vm);
+		presenter = new Presenter();
 	}
 
 	@Nullable @Override public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState){
 		binding = DataBindingUtil.inflate(inflater, R.layout.f0, container, false);
 		ButterKnife.bind(this, binding.getRoot());
+		binding.setController(controller);
 		binding.setVm(vm);
+		binding.setPresenter(presenter);
 		return binding.getRoot();
 	}
 
 	@OnClick(R.id.btn_f0) void button(final View view){
-		vm.os.set("buttonClick f0");
+		vm.os.set("buttonClick f0 received model");
 	}
 }

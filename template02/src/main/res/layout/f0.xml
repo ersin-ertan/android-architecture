@@ -1,34 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android = "http://schemas.android.com/apk/res/android">
 
-    <data>
+	<data>
 
-        <variable
-            name = "vm"
-            type = "com.nullcognition.template02.ViewModel"
-            />
-    </data>
+		<import type = "android.view.View"/>
 
-    <LinearLayout
-        android:background = "@color/colorPrimaryDark"
-        android:layout_height = "match_parent"
-        android:layout_width = "match_parent"
-        android:orientation = "vertical"
-        >
+		<import type = "com.nullcognition.template02.Presenter"/>
 
-        <TextView
-            android:layout_height = "wrap_content"
-            android:layout_width = "match_parent"
-            android:text = "@{vm.os}"
-            android:textAppearance = "?android:attr/textAppearanceLarge"
-            />
+		<variable
+			name = "vm"
+			type = "com.nullcognition.template02.ViewModel"
+			/>
 
-        <Button
-            android:id = "@+id/btn_f0"
-            android:layout_height = "wrap_content" android:layout_width = "wrap_content"
-            android:text = "Button f0"
-            />
+		<variable
+			name = "controller"
+			type = "com.nullcognition.template02.Controller"
+			/>
 
-    </LinearLayout>
+		<variable
+			name = "presenter"
+			type = "com.nullcognition.template02.Presenter"
+			/>
+
+
+	</data>
+
+	<LinearLayout
+		android:background = "@color/colorPrimaryDark"
+		android:layout_height = "match_parent"
+		android:layout_width = "match_parent"
+		android:orientation = "vertical"
+		>
+
+		<TextView
+			android:layout_height = "wrap_content"
+			android:layout_width = "match_parent"
+			android:text = "@{Presenter.capitalize(vm.os)}"
+			android:textAppearance = "?android:attr/textAppearanceLarge"
+			/>
+
+		<Button
+			android:id = "@+id/btn_f0"
+			android:layout_height = "wrap_content" android:layout_width = "wrap_content"
+			android:text = "Button f0"
+			android:onClick="@{presenter.displayClicked}"
+			/>
+
+		<Button
+			android:id = "@+id/btn_f0_controller"
+			android:layout_height = "wrap_content" android:layout_width = "wrap_content"
+			android:text = "controller.longRunningComp updating vm after 5 sec from new thread"
+		    android:onClick="@{controller.longRunningComputation}"
+			/>
+
+	</LinearLayout>
 
 </layout>
