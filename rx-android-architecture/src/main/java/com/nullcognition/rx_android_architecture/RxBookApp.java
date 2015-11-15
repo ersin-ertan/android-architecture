@@ -16,18 +16,18 @@ public class RxBookApp extends Application{
 
 	public static RxBookApp get(Context context){return (RxBookApp) context.getApplicationContext();}
 
-	ApplicationComponent applicationComponent;
-	public ApplicationComponent getApplicationComponent(){return applicationComponent;}
+//	ApplicationComponent applicationComponent;
+//	public ApplicationComponent getApplicationComponent(){return applicationComponent;}
 
 	@Override public void onCreate(){
 		super.onCreate();
 
-		if(applicationComponent == null){
+//		if(applicationComponent == null){
 //			applicationComponent =
 //					DaggerApplicationComponent.build()
 //					                          .applicationModule(new ApplicationModule(this))
 //					                          .build();
-		}
+//		}
 		// do we need to inject this? or is the graph fulfilled in the top level?
 	}
 }

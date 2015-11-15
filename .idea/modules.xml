@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/rx-android-architecture/rx-android-architecture.iml" filepath="$PROJECT_DIR$/rx-android-architecture/rx-android-architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/template00/template00.iml" filepath="$PROJECT_DIR$/template00/template00.iml" />
       <module fileurl="file://$PROJECT_DIR$/template01/template01.iml" filepath="$PROJECT_DIR$/template01/template01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/template02/template02.iml" filepath="$PROJECT_DIR$/template02/template02.iml" />
     </modules>
   </component>
 </project>
