@@ -1,1 +1,3 @@
-include ':fragmentargs', ':dagger2',  ':cleanarchitecture', ':rx-android-architecture', ':template00', ':template01', ':navi', ':fragnums', ':template02'
+include ':fragmentargs', ':dagger2', ':cleanarchitecture', ':rx-android-architecture',
+    ':template00', ':template01', ':navi', ':fragnums', ':template02', ':dagger2auto', ':phlux',
+    ':florinamvvm'

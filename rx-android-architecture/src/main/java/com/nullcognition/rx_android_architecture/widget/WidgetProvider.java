@@ -5,7 +5,6 @@ package com.nullcognition.rx_android_architecture.widget;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
-import android.content.Intent;
 
 public class WidgetProvider extends AppWidgetProvider{
 
@@ -16,10 +15,10 @@ public class WidgetProvider extends AppWidgetProvider{
 		super.onUpdate(context, appWidgetManager, appWidgetIds);
 
 		for(int appWidgetId : appWidgetIds){
-			Intent intentService = new Intent(context, WidgetService.class);
-			intentService.setAction(ACTION_REFRESH);
-			intentService.putExtra(WIDGET_ID, appWidgetId);
-			context.startService(intentService);
+			//			Intent intentService = new Intent(context, WidgetService.class);
+			//			intentService.setAction(ACTION_REFRESH);
+			//			intentService.putExtra(WIDGET_ID, appWidgetId);
+			//			context.startService(intentService);
 		}
 	}
 }

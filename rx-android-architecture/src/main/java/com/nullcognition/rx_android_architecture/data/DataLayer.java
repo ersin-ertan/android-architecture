@@ -3,4 +3,9 @@ package com.nullcognition.rx_android_architecture.data;
 
 
 public class DataLayer{
+    public static class GetGitHubRepositorySearch {
+    }
+
+    public static class GetGitHubRepository {
+    }
 }

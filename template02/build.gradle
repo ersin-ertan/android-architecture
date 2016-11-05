@@ -10,7 +10,7 @@ android{
 	}
 
 	compileSdkVersion 23
-	buildToolsVersion "23.0.1"
+	buildToolsVersion buildTools
 
 	defaultConfig{
 		applicationId "com.nullcognition.template02"

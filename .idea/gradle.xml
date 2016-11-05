@@ -5,21 +5,24 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/cleanarchitecture" />
             <option value="$PROJECT_DIR$/dagger2" />
+            <option value="$PROJECT_DIR$/dagger2auto" />
+            <option value="$PROJECT_DIR$/florinamvvm" />
             <option value="$PROJECT_DIR$/fragmentargs" />
             <option value="$PROJECT_DIR$/fragnums" />
             <option value="$PROJECT_DIR$/navi" />
+            <option value="$PROJECT_DIR$/phlux" />
             <option value="$PROJECT_DIR$/rx-android-architecture" />
             <option value="$PROJECT_DIR$/template00" />
             <option value="$PROJECT_DIR$/template01" />
             <option value="$PROJECT_DIR$/template02" />
           </set>
         </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

@@ -14,24 +14,24 @@
 	</data>
 
 	<LinearLayout
-		android:layout_height = "match_parent"
 		android:layout_width = "match_parent"
+			android:layout_height="match_parent"
 		android:orientation = "vertical"
 		>
 
 		<TextView
-			android:layout_height = "wrap_content"
 			android:layout_width = "match_parent"
+				android:layout_height="wrap_content"
 			android:textAppearance = "?android:attr/textAppearanceLarge"
-		    android:text="@{viewModel.nameFirstLast ?? @string/default_nameFirstLast}"
 			/>
+		<!--android:text="@{viewModel.nameFirstLast ?? @string/default_nameFirstLast}"-->
 
 		<Button
-			android:layout_height = "wrap_content"
 			android:layout_width = "wrap_content"
+				android:layout_height="wrap_content"
 		    android:text="ListFragmentButton"
-		    android:onClick="@{controller.changeName}"
 			/>
+		<!--android:onClick="@{controller.changeName}"-->
 
 	</LinearLayout>
 

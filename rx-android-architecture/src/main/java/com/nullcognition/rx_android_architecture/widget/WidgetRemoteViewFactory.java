@@ -7,8 +7,6 @@ import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
-import com.nullcognition.rx_android_architecture.R;
-
 public class WidgetRemoteViewFactory implements RemoteViewsService.RemoteViewsFactory{
 
 	public static final String TAG = WidgetRemoteViewFactory.class.getSimpleName();
@@ -29,6 +27,7 @@ public class WidgetRemoteViewFactory implements RemoteViewsService.RemoteViewsFa
 
 	@Override public RemoteViews getViewAt(final int position){
 		Log.d(TAG, "getViewAt(" + position + ")");
-		return new RemoteViews(context.getPackageName(), R.layout.widget_layout);
+		return null; // quick fix
+		//		return new RemoteViews(context.getPackageName(), R.layout.widget_layout);
 	}
 }

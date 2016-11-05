@@ -1,23 +1,18 @@
 package com.nullcognition.template01.di.fragment;
 // ersin 21/10/15 Copyright (c) 2015+ All rights reserved.
 
-
 import android.content.Context;
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-
-import com.nullcognition.template01.R;
+import butterknife.ButterKnife;
 import com.nullcognition.template01.di.activity.BaseActivity;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Retained;
 
-import butterknife.ButterKnife;
+//import android.databinding.DataBindingUtil;
+//import android.databinding.ViewDataBinding;
 
 public abstract class BaseViewFragment extends Fragment{
 
