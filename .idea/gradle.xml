@@ -8,7 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/aircycle" />
             <option value="$PROJECT_DIR$/cleanarchitecture" />
+            <option value="$PROJECT_DIR$/compositeandroid" />
             <option value="$PROJECT_DIR$/dagger2" />
             <option value="$PROJECT_DIR$/dagger2auto" />
             <option value="$PROJECT_DIR$/fabiomvvm" />

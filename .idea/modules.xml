@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/aircycle/aircycle.iml" filepath="$PROJECT_DIR$/aircycle/aircycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-architecture.iml" filepath="$PROJECT_DIR$/android-architecture.iml" />
       <module fileurl="file://$PROJECT_DIR$/cleanarchitecture/cleanarchitecture.iml" filepath="$PROJECT_DIR$/cleanarchitecture/cleanarchitecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/compositeandroid/compositeandroid.iml" filepath="$PROJECT_DIR$/compositeandroid/compositeandroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/dagger2/dagger2.iml" filepath="$PROJECT_DIR$/dagger2/dagger2.iml" />
       <module fileurl="file://$PROJECT_DIR$/dagger2auto/dagger2auto.iml" filepath="$PROJECT_DIR$/dagger2auto/dagger2auto.iml" />
       <module fileurl="file://$PROJECT_DIR$/fabiomvvm/fabiomvvm.iml" filepath="$PROJECT_DIR$/fabiomvvm/fabiomvvm.iml" />
