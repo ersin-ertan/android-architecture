@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/navi/navi.iml" filepath="$PROJECT_DIR$/navi/navi.iml" />
       <module fileurl="file://$PROJECT_DIR$/phlux/phlux.iml" filepath="$PROJECT_DIR$/phlux/phlux.iml" />
       <module fileurl="file://$PROJECT_DIR$/rx-android-architecture/rx-android-architecture.iml" filepath="$PROJECT_DIR$/rx-android-architecture/rx-android-architecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxpermission/rxpermission.iml" filepath="$PROJECT_DIR$/rxpermission/rxpermission.iml" />
       <module fileurl="file://$PROJECT_DIR$/template00/template00.iml" filepath="$PROJECT_DIR$/template00/template00.iml" />
       <module fileurl="file://$PROJECT_DIR$/template01/template01.iml" filepath="$PROJECT_DIR$/template01/template01.iml" />
       <module fileurl="file://$PROJECT_DIR$/template02/template02.iml" filepath="$PROJECT_DIR$/template02/template02.iml" />
